@@ -142,6 +142,9 @@ choice
 config BR2_LINUX_KERNEL_USE_DEFCONFIG
 	bool "Using an in-tree defconfig file"
 
+config BR2_LINUX_KERNEL_USE_DEFAULT_DEFCONFIG
+	bool "Using the architecture default defconfig"
+
 config BR2_LINUX_KERNEL_USE_CUSTOM_CONFIG
 	bool "Using a custom (def)config file"
 
