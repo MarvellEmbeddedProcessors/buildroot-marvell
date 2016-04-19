@@ -9,6 +9,10 @@ FIO_SITE = https://fossies.org/linux/misc
 FIO_LICENSE = GPLv2 + special obligations
 FIO_LICENSE_FILES = LICENSE
 
+ifeq ($(BR2_PACKAGE_LIBAIO),y)
+FIO_DEPENDENCIES += libaio
+endif
+
 define FIO_CONFIGURE_CMDS
 	(cd $(@D); ./configure --cc="$(TARGET_CC)" --extra-cflags="$(TARGET_CFLAGS)")
 endef
