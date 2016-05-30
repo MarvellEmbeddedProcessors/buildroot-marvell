@@ -1292,6 +1292,7 @@ endif
 	source "package/knock/Config.in"
 	source "package/leafnode2/Config.in"
 	source "package/lftp/Config.in"
+	source "package/libreswan/Config.in"
 	source "package/lighttpd/Config.in"
 	source "package/linknx/Config.in"
 	source "package/links/Config.in"
