@@ -77,6 +77,8 @@ define LIBNSS_INSTALL_TARGET_CMDS
 		$(TARGET_DIR)/usr/lib/pkgconfig/nss.pc
 	$(SED) 's/@VERSION@/$(LIBNSS_VERSION)/g;' \
 		$(TARGET_DIR)/usr/lib/pkgconfig/nss.pc
+	$(INSTALL) -D -m 755 -t $(TARGET_DIR)/usr/sbin/ \
+		$(@D)/nss/cmd/certutil/*.OBJ/certutil
 endef
 
 $(eval $(generic-package))
