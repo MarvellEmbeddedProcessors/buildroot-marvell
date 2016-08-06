@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-FIO_VERSION = 2.8
+FIO_VERSION = 2.13
 FIO_SITE = https://fossies.org/linux/misc
 FIO_LICENSE = GPLv2 + special obligations
 FIO_LICENSE_FILES = LICENSE
