@@ -1329,6 +1329,13 @@ config BR2_TOOLCHAIN_EXTERNAL_GDB_SERVER_COPY
 	  Copy the gdbserver provided by the external toolchain to the
 	  target.
 
+config BR2_TOOLCHAIN_EXTERNAL_GETCONF_COPY
+	bool "Copy getconf to the Target"
+	depends on BR2_TOOLCHAIN_EXTERNAL
+	help
+	  Copy the getconf provided by the external toolchain to the
+	  target.
+
 # When the FDPIC shared binary format is used, the corresponding libraries are
 # always installed. When a different binary format is used, we offer the option
 # of installing the FDPIC shared libraries.

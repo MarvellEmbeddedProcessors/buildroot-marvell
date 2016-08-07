@@ -659,6 +659,23 @@ define TOOLCHAIN_EXTERNAL_INSTALL_TARGET_LIBS
 			echo "Could not find gdbserver in external toolchain" ; \
 			exit 1 ; \
 		fi ; \
+	fi ; \
+	if test "$(BR2_TOOLCHAIN_EXTERNAL_GETCONF_COPY)" = "y"; then \
+		$(call MESSAGE,"Copying getconf") ; \
+		getconf_found=0 ; \
+		for d in $${ARCH_SYSROOT_DIR}/usr \
+			 $${ARCH_SYSROOT_DIR}/usr/$${ARCH_LIB_DIR} \
+			 $(TOOLCHAIN_EXTERNAL_INSTALL_DIR); do \
+			if test -f $${d}/bin/getconf ; then \
+				install -m 0755 -D $${d}/bin/getconf $(TARGET_DIR)/usr/bin/getconf ; \
+				getconf_found=1 ; \
+				break ; \
+			fi ; \
+		done ; \
+		if [ $${getconf_found} -eq 0 ] ; then \
+			echo "Could not find getconf in external toolchain" ; \
+			exit 1 ; \
+		fi ; \
 	fi
 endef
 
